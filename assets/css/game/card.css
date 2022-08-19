@@ -1,0 +1,33 @@
+.card{
+    aspect-ratio: 3/4;              /*Proporção width/height*/
+    background: #222222;
+    border-radius: 5px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 400ms ease;
+    width: 100%;  
+}
+.face{
+    background-position: center;
+    background-size: cover;
+    border: 2px solid #39813a;
+    border-radius: 5px;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.front{
+    display: none;
+    transform: rotateY(180deg);                 /*Quando invertemos o card, a imagem do back fica invertida*/
+}
+.back{
+    backface-visibility: hidden;
+    background-image: url('../../img/back.png');   
+}
+.revealed-card{
+    transform: rotateY(180deg);
+}
+.disabled-card{
+    filter: saturate(0);
+    opacity: 0.5;
+}

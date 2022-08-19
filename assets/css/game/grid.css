@@ -1,0 +1,17 @@
+.grid{
+    background-color: rgba(30,30,30,0.3);
+    display: grid;
+    gap: 3%;
+    grid-template-columns: repeat(4, 1fr); /*fr: fração*/
+    height:calc(fit-content + 60%);
+    max-width: 480px;
+    padding: 1.5%;
+    width: 80%;
+}
+
+@media screen and (min-width: 468px) {
+    .grid{
+        aspect-ratio: calc(20 + 9%)/calc(12 +7.5%);
+        grid-template-columns: repeat(5, 1fr);
+    }  
+}
