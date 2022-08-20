@@ -1,0 +1,14 @@
+.header{
+    background-color: rgba(55,55,55,0.2);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    max-width: calc(480px - 1.5%);
+    padding: 0.5rem;
+    width: 77%;
+}
+
+.header__information{
+    line-height: 1.5rem;
+    text-align: center;
+}

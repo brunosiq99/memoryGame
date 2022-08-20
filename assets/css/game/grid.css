@@ -1,9 +1,7 @@
 .grid{
-    background-color: rgba(30,30,30,0.3);
     display: grid;
     gap: 3%;
     grid-template-columns: repeat(4, 1fr); /*fr: fração*/
-    height:calc(fit-content + 60%);
     max-width: 480px;
     padding: 1.5%;
     width: 80%;

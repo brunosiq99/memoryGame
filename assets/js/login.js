@@ -13,11 +13,19 @@ function validateInput(){
         loginButton.disabled = 1;
     }
 }
-const captureUsername = (event) => {
+
+
+//let userNameI = 0;
+const captureUsername = ((event) => {
     event.preventDefault();             // Bloqueia comportamento padrão de recarregar a página
-    localStorage.setItem('player', loginInput.value);  
+    localStorage.setItem(`player`, loginInput.value);  
     window.location = './game.html';
-}
+    //userNameI++;
+})
+
+
+
+
 
 loginInput.addEventListener('input', validateInput);
 loginForm.addEventListener('submit', captureUsername);

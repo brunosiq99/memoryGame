@@ -9,14 +9,27 @@
         <link rel="stylesheet" href="./assets/css/game/body.css">
         <link rel="stylesheet" href="./assets/css/game/grid.css">
         <link rel="stylesheet" href="./assets/css/game/card.css">
+        <link rel="stylesheet" href="./assets/css/game/header.css">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        
         <script src="./assets/js/game.js" defer></script>
     </head>
     <body class="body">
-        <div class="grid">
-    
-
+        <div class="header">
+            <div class="header__information">
+                <h2 class="header__title">Nome</h2>
+                <p class="header__value" data-information="name"></p>
+            </div>
+            <div class="header__information">
+                <h2 class="header__title">Jogadas</h2>
+                <p class="header__value" data-information="moves">0</p>
+            </div>
+            <div class="header__information">
+                <h2 class="header__title">Tempo</h2>
+                <p class="header__value" data-information="time"></p>
+            </div>
         </div>
+        <div class="grid"></div>
     </body>
 </html>

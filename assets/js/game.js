@@ -15,6 +15,7 @@ const characters = [
     'scroopy',
     'summer'
 ]
+const cards = [];
 
 const revealCard = ({target}) => {
     let frontFace = target.parentNode.childNodes[1]; 
@@ -55,13 +56,16 @@ function createCard(character){
     const cardBack = createElement('div','back face');
     cardFront.style.backgroundImage = `url('./assets/img/${character}.png')`;
     card.setAttribute('data-character', character);
-
+    
     card.addEventListener('click', revealCard);
+    cards.push(card);
 
     card.appendChild(cardBack);
     card.appendChild(cardFront);
+
     return card;
 }
+
 
 function loadGame(){
     //... : spread operators
@@ -77,14 +81,18 @@ function loadGame(){
     shuffledCharacters.forEach((character) => {
         const card = createCard(character);
         grid.appendChild(card);
-    })
+    }) 
+    
+
 }
+
 
 
 
 function checkCards(firstCard,secondCard){
     const firstCharacter = firstCard.getAttribute('data-character');
     const secondCharacter = secondCard.getAttribute('data-character');
+    countsMoves();
     if(firstCharacter != secondCharacter){
         setTimeout(() => {
             hideCard(firstCard);
@@ -93,8 +101,50 @@ function checkCards(firstCard,secondCard){
     }else{
         firstCard.classList.add('disabled-card');
         secondCard.classList.add('disabled-card');
+        checkEndGame();
     }
 }
 
+function startGameData(){
+    const name = localStorage.getItem('player');
+    document.querySelector('[data-information = "name"]').innerText = name;
+    return 0;
+}
+function countsMoves(){
+    moves++;
+    document.querySelector('[data-information = "moves" ]').innerText = moves;
+}
+
+function checkEndGame(){
+    let i = 0; //for Counting number of disabled cards
+    cards.forEach((card) => {
+        if(!card.className.includes('disabled-card')){
+            console.log('Retornei')
+            return   
+        }else{
+            i++;
+            console.log(`${i}/${cards.length}`)
+        }
+
+    })
+    if (i >= cards.length){
+        clearInterval(timeCounter);
+        alert(`Você ganhou!! Com ${moves} rodadas e ${time} segundos`)
+    }
+    
+}
+
+
+let moves = startGameData();    //Return 0 to move count
+let time = 0;
+const timeCounter = setInterval(()=>{
+      time++;
+    document.querySelector('[data-information = "time"]').innerText = time;
+    return timeCounter
+},1000)
 
 loadGame();
+
+
+
+
