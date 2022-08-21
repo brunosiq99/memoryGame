@@ -6,11 +6,13 @@
     height: 100vh;
     justify-content: center;
 }
+
+/*Login Header*/
 .login__header{
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-bottom: 4rem;  
+    margin-bottom: 2rem;  
 }
 .login__img{
     max-width: 300px;
@@ -22,26 +24,62 @@
     line-height: 2rem;
     text-align: center;   
 }
+
+
+/*Login Theme*/
+.login__theme{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 4rem;
+    margin-bottom: 3rem;
+}
+.login__theme___radio{
+    all:unset;
+    aspect-ratio: 3/4;
+    background-size: cover;
+    border: 1pt solid #fdfdfd;
+    border-radius: 5px;
+    display: block;
+    margin: 0 1rem;
+    transition: all 500ms;
+    width: 3rem;
+}
+.login__theme___radio:checked{
+    border: 2pt solid gold;
+    width: 5rem;
+}
+#rickAndMorty{
+    background-image: url('../../img/rickAndMorty/back.png');
+}
+#gravityFalls{
+    background-image: url('../../img/gravityFalls/back.png');
+}
+#simpsons{
+    background-image: url('../../img/simpsons/back.png');
+}
+
+
+
+/*Login Input*/
 .login__input{
     border-radius: 10px;
-    font-family: 'Press Start 2P', cursive;
-    height: 2.5rem;
     margin-bottom: 1rem;
-    max-width: 300px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    width: 80%;
 }
 .login__button{
     background-color: #ee665c;
     border-radius: 10px;
     color: #fdfdfd;
     cursor: pointer;
-    font-family: 'Press Start 2P', cursive;
-    height: 2rem;
-    max-width: 300px;
     padding-left: 1rem;
-    padding-right: 1rem;
+    padding-right: 1rem;  
+}
+.login__container{
+    font-family: 'Press Start 2P', cursive;
+    height: 2.5rem;
+    max-width: 300px;
     width: 80%;
 }
 .login__button:disabled{

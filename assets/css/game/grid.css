@@ -2,8 +2,8 @@
     display: grid;
     gap: 3%;
     grid-template-columns: repeat(4, 1fr); /*fr: fração*/
+    margin-top: 1rem;
     max-width: 480px;
-    padding: 1.5%;
     width: 80%;
 }
 

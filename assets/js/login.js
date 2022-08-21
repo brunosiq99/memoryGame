@@ -1,7 +1,7 @@
 const loginInput = document.querySelector('.login__input');
 const loginButton = document.querySelector('.login__button');
 const loginForm = document.querySelector('.login');
-
+const themeList = document.getElementsByName('theme');
 
 
 function validateInput(){
@@ -14,20 +14,29 @@ function validateInput(){
     }
 }
 
-
-//let userNameI = 0;
-const captureUsername = ((event) => {
+const setThemeAndUserName = ((event) => {
+    setTheme();
     event.preventDefault();             // Bloqueia comportamento padrão de recarregar a página
     localStorage.setItem(`player`, loginInput.value);  
     window.location = './game.html';
-    //userNameI++;
 })
+
+function setTheme(){
+    themeList.forEach((theme) => {
+        if(theme.checked){
+            console.log(theme.id)
+            localStorage.setItem('theme', theme.id)
+        }
+    })
+}
+    
+
 
 
 
 
 
 loginInput.addEventListener('input', validateInput);
-loginForm.addEventListener('submit', captureUsername);
+loginForm.addEventListener('submit', setThemeAndUserName);
 
 

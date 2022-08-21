@@ -22,7 +22,7 @@
 }
 .back{
     backface-visibility: hidden;
-    background-image: url('../../img/back.png');   
+    background-image: url('../../img/rickAndMorty/back.png');   
 }
 .revealed-card{
     transform: rotateY(180deg);
